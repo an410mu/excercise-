@@ -1,0 +1,95 @@
+/* These CSS rules apply to the <html>, <body>, and <div id="app"> HTML elements in index.html */
+html, body, #app {
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Continue building out the CSS styling for your Twiddler app below! We got you started by
+providing a space for you to apply styles to your app's outermost HTML element - the #app itself. */
+
+#app {
+  border: 5px solid black;
+  height: auto;
+  background-color: rgb(194, 211, 244);
+  color:black;
+  font-family: 'Orbitron', sans-serif;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25% ;
+  grid-template-rows: 8% 2% fr;
+  grid-template-areas:
+    "header header header header"
+    ". nav . ."
+    ". . main main";
+
+
+}
+#update-feed {
+
+  grid-area: nav;
+  width: 100px;
+}
+
+h1 {
+  grid-area: header;
+  justify-self: center;
+  align-self: center;
+}
+
+#feed {
+
+
+  grid-area: main;
+  /* height: 1300px; */
+  align-items: center;
+
+
+}
+
+.tweet {
+  border: 1px solid #ccc;
+  border-radius: 1em;
+  background-color: aliceblue;
+  padding: 10px;
+  width:85%;
+  height:100px;
+  display: grid;
+  grid-template-columns: 35% 65% ;
+  grid-template-rows: 45% 25% 15% 15%;
+  grid-template-areas:
+    "photo text"
+    "photo text"
+    "name ."
+    "icon time ";
+}
+
+.profile-photo {
+  grid-area: photo;
+}
+
+.username {
+  grid-area: name;
+  font-size: 10px;
+  font-style: italic;
+}
+
+.message {
+  grid-area: text;
+  font-size: 10px;
+  justify-self: center;
+  align-self: center;
+  font-weight:100;
+  text-align: center;
+}
+
+.tweet .timestamp {
+  font-size: 8px;
+  font-weight: 0.001;
+  grid-area: time;
+  justify-self: end;
+}
+
+.tweet .icon {
+
+  grid-area: icon;
+  justify-self: start;
+}
